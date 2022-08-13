@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>JS</title>
+</head>
+<body>
+    <div class="outer">
+        <h1 class="main-heading">Игра для маленьких умников. Знаешь ли ты слова?</h1>
+        <div class="workspace">
+            <div class="workspace__task"></div>
+            <form action="#" class="workspace__form form">
+                <label for="input" class="form__label">Впиши буквы</label>
+                <input type="text" name="input" id="input" class="form__input" autofocus>
+            <button type="submit" class="form__btn">Проверь свой результат</button>
+            </form>
+            <div class="workspace__results results"></div>
+        </div>
+        <div class="right">Молодец! Всё правильно</div>
+        <div class="winner">Молодец!!! Все испытания пройдены</div>
+    </div>
+    <script src="./js/variables.js"></script>
+    <script src="./js/dictionary.js"></script> 
+    <script src="./js/functions.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

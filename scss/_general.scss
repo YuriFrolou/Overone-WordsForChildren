@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+.outer {
+  position: relative;
+}
+
+.main-heading {
+  text-align: center;
+  color: green;
+}
+
+.no-data-message {
+  font-size: 30px;
+  grid-column: 1/-1;
+
+  @include sm-device {
+    margin-top: 80px;
+  }
+}
+
+.winner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 7;
+  height: 100%;
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 54px;
+  color: #fff;
+  background: url(../img/celebrate.gif) center no-repeat #fff;
+  background-size: cover;
+  &.active {
+    display: flex;
+  }
+}
+
+.right {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 54px;
+  color: blueviolet;
+  background: #fff;
+  &.active {
+    display: flex;
+  }
+}
