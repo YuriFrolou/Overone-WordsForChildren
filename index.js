@@ -9,14 +9,14 @@ formInput.addEventListener("input", (event) => {
     formBtn.disabled = true;
     const value = event.target.value;
     result = checkLetter(value);
-    if (result === words[index]) {
+    if (result.toLowerCase() === words[index]) {
         activateFormBtn();
     }
 });
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-
+    formBtn.disabled = true;
     if (countQuestions >= words.length - 1) {
         winnerShow.classList.add("active");
         let audio = new Audio('../audio/victory.mp3');
@@ -24,7 +24,7 @@ form.addEventListener("submit", (e) => {
         audio.loop = true;
 
     }
-    if (result === words[index]) {
+    if (result.toLowerCase() === words[index]) {
         congratulate();
         formBtn.disabled = true;
     }

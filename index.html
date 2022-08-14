@@ -12,9 +12,9 @@
         <h1 class="main-heading">Игра для маленьких умников. Знаешь ли ты слова?</h1>
         <div class="workspace">
             <div class="workspace__task"></div>
-            <form action="#" class="workspace__form form">
+            <form action="#" autocomplete ="off" class="workspace__form form">
                 <label for="input" class="form__label">Впиши буквы</label>
-                <input type="text" name="input" id="input" class="form__input" autofocus>
+                <input type="text" name="input" id="input" class="form__input" autofocus onKeyDown="preventBackspace()">
             <button type="submit" class="form__btn">Проверь свой результат</button>
             </form>
             <div class="workspace__results results"></div>

@@ -5,6 +5,20 @@ const formBtn = document.querySelector(".form__btn");
 
 formBtn.disabled = true;
 
+function preventBackspace(e) {
+    let evt = e || window.event;
+    if (evt) {
+        let keyCode = evt.charCode || evt.keyCode;
+        if (keyCode === 8 || keyCode === 46) {
+            if (evt.preventDefault) {
+                evt.preventDefault();
+            } else {
+                evt.returnValue = false;
+            }
+        }
+    }
+  }
+
 function congratulate() {
     let audio = new Audio('../audio/applaud.mp3');
     audio.play();
@@ -33,13 +47,14 @@ function error(value) {
 }
 
 function checkLetter(value) {
+    const letter = value[value.length - 1].toLowerCase();
+    const word = words[index];
 
-    if (indexLetter >= words[index].length - 1) {
+    if (indexLetter >= words[index].length - 1 && letter === word[indexLetter]) {
         formInput.disabled = true;
         return value;
     }
-    const letter = value[value.length - 1];
-    const word = words[index];
+
     if (letter === word[indexLetter]) {
         indexLetter++;
         return "";

@@ -12,6 +12,9 @@
     padding: 10px 0 10px 20px;
     margin-bottom: 20px;
     font-size: 40px;
+    @include sm-device {
+      height: 200px;
+    }
   }
 
   &__label {
